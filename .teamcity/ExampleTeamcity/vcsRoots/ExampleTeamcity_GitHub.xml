@@ -2,14 +2,14 @@
 <vcs-root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="" type="jetbrains.git" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2025.3/project-config.xsd">
   <name>GitHub</name>
   <param name="agentCleanFilesPolicy" value="ALL_UNTRACKED" />
-  <param name="agentCleanPolicy" value="ON_BRANCH_CHANGE" />
+  <param name="agentCleanPolicy" value="ALWAYS" />
   <param name="authMethod" value="PASSWORD" />
   <param name="branch" value="refs/heads/master" />
   <param name="ignoreKnownHosts" value="true" />
   <param name="secure:password" value="credentialsJSON:a604e5ea-2854-468d-b906-8ec8c2335ce8" />
   <param name="submoduleCheckout" value="IGNORE" />
   <param name="url" value="https://github.com/slateeho/TeamCityPipeline.git" />
-  <param name="useAlternates" value="NO_MIRRORS" />
+  <param name="useAlternates" value="AUTO" />
   <param name="username" value="slateeho" />
   <param name="usernameStyle" value="USERID" />
 </vcs-root>
