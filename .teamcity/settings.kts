@@ -80,10 +80,7 @@ object GitHub : GitVcsRoot({
     name = "GitHub"
     url = "https://github.com/slateeho/TeamCityPipeline.git"
     branch = "refs/heads/master"
+    branchSpec = "+:refs/heads/*"
     checkoutSubmodules = GitVcsRoot.CheckoutSubmodules.IGNORE
     checkoutPolicy = GitVcsRoot.AgentCheckoutPolicy.NO_MIRRORS
-    authMethod = password {
-        userName = "slateeho"
-        password = "credentialsJSON:54e33c7d-ffaa-4abc-a44d-eed4f6afda5e"
-    }
 })
