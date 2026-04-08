@@ -44,6 +44,7 @@ changeBuildType(RelativeId("MavenBuild2")) {
             conditions {
                 equals("teamcity.build.branch", "master")
             }
+            goals = "clean package deploy"
             isIncremental = true
             param("teamcity.kubernetes.executor.pull.policy", "")
         }
