@@ -73,12 +73,8 @@ object MavenBuild2 : BuildType({
             enableQueueOptimization = false
         }
     }
-
-    features {
-        feature {
-            type = "publish-artifacts"
-        }
-    }
+    
+    artifactRules = "target/plaindoll.jar"
 })
 
 object GitHub : GitVcsRoot({
