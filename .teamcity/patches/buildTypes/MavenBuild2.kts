@@ -1,6 +1,8 @@
 package patches.buildTypes
 
 import jetbrains.buildServer.configs.kotlin.*
+import jetbrains.buildServer.configs.kotlin.buildSteps.MavenBuildStep
+import jetbrains.buildServer.configs.kotlin.buildSteps.maven
 import jetbrains.buildServer.configs.kotlin.ui.*
 
 /*
@@ -13,4 +15,36 @@ changeBuildType(RelativeId("MavenBuild2")) {
         "Unexpected option value: artifactRules = $artifactRules"
     }
     artifactRules = "target/plaindoll.jar => artifacts"
+
+    expectSteps {
+        maven {
+            name = "deploy"
+
+            conditions {
+                equals("teamcity.build.branch", "master")
+            }
+            goals = "clean deploy"
+            pomLocation = "pom.xml"
+        }
+        maven {
+            name = "test"
+            id = "text"
+
+            conditions {
+                doesNotEqual("teamcity.build.branch", "master")
+            }
+            goals = "clean test"
+            pomLocation = "pom.xml"
+        }
+    }
+    steps {
+        update<MavenBuildStep>(0) {
+            clearConditions()
+
+            conditions {
+                equals("teamcity.build.branch", "refs/tags/master")
+            }
+            param("teamcity.kubernetes.executor.pull.policy", "")
+        }
+    }
 }
