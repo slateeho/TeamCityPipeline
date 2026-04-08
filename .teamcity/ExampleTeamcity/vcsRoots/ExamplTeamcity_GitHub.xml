@@ -3,6 +3,7 @@
   <name>GitHub_1</name>
   <param name="agentCleanFilesPolicy" value="ALL_UNTRACKED" />
   <param name="agentCleanPolicy" value="ALWAYS" />
+  <param name="agentGitPath" value="/usr/bin/git" />
   <param name="authMethod" value="PASSWORD" />
   <param name="branch" value="refs/heads/master" />
   <param name="ignoreKnownHosts" value="true" />
