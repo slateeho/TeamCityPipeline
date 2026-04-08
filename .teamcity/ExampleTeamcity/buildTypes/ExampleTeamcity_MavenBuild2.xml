@@ -49,7 +49,7 @@
       </runner>
     </build-runners>
     <vcs-settings>
-      <vcs-entry-ref root-id="ExampleTeamcity_GitHub" />
+      <vcs-entry-ref root-id="ExamplTeamcity_GitHub" />
     </vcs-settings>
     <build-triggers>
       <build-trigger id="TRIGGER_1" type="vcsTrigger">
@@ -69,7 +69,7 @@
       <extension id="BUILD_EXT_2" type="VcsLabeling">
         <parameters>
           <param name="labelingPattern" value="build-%teamcity.build.branch%" />
-          <param name="vcsRootId" value="ExampleTeamcity_GitHub" />
+          <param name="vcsRootId" value="ExamplTeamcity_GitHub" />
         </parameters>
       </extension>
     </build-extensions>
