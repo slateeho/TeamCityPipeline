@@ -52,7 +52,7 @@ changeBuildType(RelativeId("MavenBuild2")) {
             clearConditions()
 
             conditions {
-                doesNotEqual("teamcity.build.branch", "master")
+                doesNotEqual("teamcity.build.branch", "refs/tags/master")
             }
             runnerArgs = "-Dmaven.test.failure.ignore=true"
             localRepoScope = MavenBuildStep.RepositoryScope.BUILD_CONFIGURATION
