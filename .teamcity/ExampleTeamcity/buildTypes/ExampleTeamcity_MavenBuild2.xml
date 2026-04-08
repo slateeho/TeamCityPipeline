@@ -13,7 +13,7 @@
     <build-runners>
       <runner id="RUNNER_1" name="deploy" type="Maven2">
         <conditions>
-          <equals name="teamcity.build.branch" value="master" />
+          <equals name="teamcity.build.branch" value="refs/heads/master" />
         </conditions>
         <parameters>
           <param name="goals" value="clean package" />
