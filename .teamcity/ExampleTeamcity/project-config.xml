@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2025.3/project-config.xsd">
+  <name>example-teamcity</name>
+  <project-extensions>
+    <extension id="PROJECT_EXT_1" type="versionedSettings">
+      <parameters>
+        <param name="buildSettings" value="PREFER_VCS" />
+        <param name="credentialsStorageType" value="credentialsJSON" />
+        <param name="enabled" value="true" />
+        <param name="ignoreChangesInDependenciesAndVcsSettings" value="false" />
+        <param name="rootId" value="ExampleTeamcity_GitHub" />
+        <param name="showChanges" value="false" />
+      </parameters>
+    </extension>
+    <extension id="PROJECT_EXT_3" type="IssueTracker">
+      <parameters>
+        <param name="authType" value="anonymous" />
+        <param name="name" value="slateeho/TeamCityPipeline" />
+        <param name="pattern" value="#(\d+)" />
+        <param name="repository" value="https://github.com/slateeho/TeamCityPipeline" />
+        <param name="secure:accessToken" value="" />
+        <param name="secure:password" value="" />
+        <param name="tokenId" value="" />
+        <param name="type" value="GithubIssues" />
+        <param name="username" value="" />
+      </parameters>
+    </extension>
+  </project-extensions>
+</project>
+

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2025.3/project-config.xsd">
+  <name>Build</name>
+  <description />
+  <settings>
+    <options>
+      <option name="artifactRules" value="target/plaindoll.jar =&gt; artifacts" />
+      <option name="buildConfigurationType" value="DEPLOYMENT" />
+      <option name="maximumNumberOfBuilds" value="1" />
+      <option name="publishArtifactCondition" value="SUCCESSFUL" />
+    </options>
+    <parameters>
+      <param name="branch" value="teamcity.build.branch" />
+    </parameters>
+    <build-runners>
+      <runner id="RUNNER_1" name="deploy" type="Maven2">
+        <conditions>
+          <equals name="teamcity.build.branch" value="refs/heads/master" />
+        </conditions>
+        <parameters>
+          <param name="goals" value="clean package" />
+          <param name="isIncremental" value="true" />
+          <param name="localRepoScope" value="agent" />
+          <param name="maven.path" value="%teamcity.tool.maven.DEFAULT%" />
+          <param name="pomLocation" value="pom.xml" />
+          <param name="teamcity.coverage.emma.include.source" value="true" />
+          <param name="teamcity.coverage.emma.instr.parameters" value="-ix -*Test*" />
+          <param name="teamcity.coverage.idea.includePatterns" value="*" />
+          <param name="teamcity.coverage.jacoco.patterns" value="+:*" />
+          <param name="teamcity.kubernetes.executor.pull.policy" value="IfNotPresent" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="teamcity.tool.jacoco" value="%teamcity.tool.jacoco.DEFAULT%" />
+          <param name="userSettingsSelection" value="userSettingsSelection:default" />
+        </parameters>
+      </runner>
+      <runner id="text" name="test" type="Maven2">
+        <conditions>
+          <does-not-equal name="teamcity.build.branch" value="refs/heads/master" />
+        </conditions>
+        <parameters>
+          <param name="goals" value="clean test" />
+          <param name="localRepoScope" value="buildConfiguration" />
+          <param name="maven.path" value="%teamcity.tool.maven.DEFAULT%" />
+          <param name="pomLocation" value="pom.xml" />
+          <param name="runnerArgs" value="-Dmaven.test.failure.ignore=true" />
+          <param name="teamcity.coverage.emma.include.source" value="true" />
+          <param name="teamcity.coverage.emma.instr.parameters" value="-ix -*Test*" />
+          <param name="teamcity.coverage.idea.includePatterns" value="*" />
+          <param name="teamcity.coverage.jacoco.patterns" value="+:*" />
+          <param name="teamcity.kubernetes.executor.pull.policy" value="IfNotPresent" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="teamcity.tool.jacoco" value="%teamcity.tool.jacoco.DEFAULT%" />
+          <param name="userSettingsSelection" value="userSettingsSelection:default" />
+        </parameters>
+      </runner>
+    </build-runners>
+    <vcs-settings>
+      <vcs-entry-ref root-id="ExampleTeamcity_GitHub">
+        <checkout-rule rule="+:. =&gt; ." />
+      </vcs-entry-ref>
+      <vcs-entry-ref root-id="ExampleTeamcity_SlateehoTeamCityPipeline" />
+    </vcs-settings>
+    <build-triggers>
+      <build-trigger id="TRIGGER_1" type="vcsTrigger">
+        <parameters>
+          <param name="branchFilter" value="" />
+          <param name="enableQueueOptimization" value="" />
+          <param name="quietPeriodMode" value="DO_NOT_USE" />
+        </parameters>
+      </build-trigger>
+    </build-triggers>
+  </settings>
+</build-type>
+
