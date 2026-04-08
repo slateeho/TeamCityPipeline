@@ -77,7 +77,7 @@ object MavenBuild2 : BuildType({
             id = "text"
 
             conditions {
-                doesNotEqual("teamcity.build.branch", "refs/remotes/origin/master")
+                doesNotEqual("teamcity.build.branch", "refs/heads/master")
             }
             goals = "clean test"
             runnerArgs = "-Dmaven.test.failure.ignore=true"
