@@ -67,7 +67,7 @@ object MavenBuild2 : BuildType({
             name = "deploy"
 
             conditions {
-                equals("teamcity.build.branch", "refs/remotes/origin/master")
+                equals("teamcity.build.branch", "refs/heads/master")
             }
             goals = "clean package"
             isIncremental = true
