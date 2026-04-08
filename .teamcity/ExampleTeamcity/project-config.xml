@@ -2,6 +2,21 @@
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2025.3/project-config.xsd">
   <name>example-teamcity</name>
   <project-extensions>
+    <extension id="ExampleTeamcity_AmazonWebServicesAws" type="OAuthProvider">
+      <parameters>
+        <param name="awsAccessKeyId" value="AKIAYM7POAYCP7LMPUVR" />
+        <param name="awsAllowedInBuilds" value="false" />
+        <param name="awsAllowedInSubProjects" value="false" />
+        <param name="awsCredentialsType" value="awsAccessKeys" />
+        <param name="awsIamRoleSessionName" value="TeamCity-session" />
+        <param name="awsRegionName" value="eu-central-1" />
+        <param name="awsSessionCredentials" value="true" />
+        <param name="awsStsEndpoint" value="https://sts.eu-central-1.amazonaws.com" />
+        <param name="displayName" value="Amazon Web Services (AWS)" />
+        <param name="providerType" value="AWS" />
+        <param name="secure:awsSecretAccessKey" value="credentialsJSON:1c4a6bf7-28e6-4a7d-a60b-70b6742ceb2b" />
+      </parameters>
+    </extension>
     <extension id="PROJECT_EXT_1" type="versionedSettings">
       <parameters>
         <param name="buildSettings" value="ALWAYS_USE_CURRENT" />
