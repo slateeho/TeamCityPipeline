@@ -25,6 +25,16 @@
         <param name="username" value="" />
       </parameters>
     </extension>
+    <extension id="PROJECT_EXT_4" type="OAuthProvider">
+      <parameters>
+        <param name="clientId" value="slateeho" />
+        <param name="defaultTokenScope" value="public_repo,repo,repo:status,write:repo_hook" />
+        <param name="displayName" value="GitHub.com" />
+        <param name="gitHubUrl" value="https://github.com/" />
+        <param name="providerType" value="GitHub" />
+        <param name="secure:clientSecret" value="credentialsJSON:85e0cc7c-102d-452c-b372-837e8087da0c" />
+      </parameters>
+    </extension>
   </project-extensions>
 </project>
 
