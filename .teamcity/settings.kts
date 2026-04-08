@@ -37,7 +37,7 @@ project {
 object MavenBuild2 : BuildType({
     name = "Build"
 
-    artifactRules = "target/*.jar"
+    artifactRules = "target/*.jar => artifacts"
     type = BuildTypeSettings.Type.DEPLOYMENT
     maxRunningBuilds = 1
     publishArtifacts = PublishMode.SUCCESSFUL

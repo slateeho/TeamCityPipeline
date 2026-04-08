@@ -38,6 +38,7 @@
 
   <build>
     <sourceDirectory>${basedir}</sourceDirectory>
+
     <plugins>
       <plugin>
         <artifactId>kotlin-maven-plugin</artifactId>
@@ -62,6 +63,7 @@
           </execution>
         </executions>
       </plugin>
+
       <plugin>
         <groupId>org.jetbrains.teamcity</groupId>
         <artifactId>teamcity-configs-maven-plugin</artifactId>
@@ -69,6 +71,18 @@
         <configuration>
           <format>kotlin</format>
           <dstDir>target/generated-configs</dstDir>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <version>3.3.0</version>
+        <configuration>
+          <archive>
+            <manifest>
+              <mainClass>plaindoll.HelloPlayer</mainClass>
+            </manifest>
+          </archive>
         </configuration>
       </plugin>
     </plugins>
