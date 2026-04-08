@@ -48,6 +48,9 @@
         </parameters>
       </runner>
     </build-runners>
+    <vcs-settings>
+      <vcs-entry-ref root-id="ExampleTeamcity_GitHub" />
+    </vcs-settings>
     <build-triggers>
       <build-trigger id="TRIGGER_1" type="vcsTrigger">
         <parameters>
