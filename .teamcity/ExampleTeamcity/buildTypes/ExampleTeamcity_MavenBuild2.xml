@@ -56,7 +56,6 @@
       <vcs-entry-ref root-id="ExampleTeamcity_GitHub">
         <checkout-rule rule="+:. =&gt; ." />
       </vcs-entry-ref>
-      <vcs-entry-ref root-id="ExampleTeamcity_SlateehoTeamCityPipeline" />
     </vcs-settings>
     <build-triggers>
       <build-trigger id="TRIGGER_1" type="vcsTrigger">
