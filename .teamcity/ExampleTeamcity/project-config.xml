@@ -32,7 +32,7 @@
         <param name="displayName" value="GitHub.com" />
         <param name="gitHubUrl" value="https://github.com/" />
         <param name="providerType" value="GitHub" />
-        <param name="secure:clientSecret" value="credentialsJSON:85e0cc7c-102d-452c-b372-837e8087da0c" />
+        <param name="secure:clientSecret" value="credentialsJSON:a604e5ea-2854-468d-b906-8ec8c2335ce8" />
       </parameters>
     </extension>
   </project-extensions>
