@@ -11,7 +11,7 @@
       <option name="showDependenciesChanges" value="true" />
     </options>
     <output-parameters>
-      <param name="env.a" value="%env.a%" />
+      <param name="aa" value="%teamcity.build.branch%" />
     </output-parameters>
     <build-runners>
       <runner id="RUNNER_1" name="deploy" type="Maven2">
