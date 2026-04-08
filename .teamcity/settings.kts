@@ -37,7 +37,6 @@ project {
 object MavenBuild2 : BuildType({
     name = "Build"
 
-    enablePersonalBuilds = false
     artifactRules = "target/*.jar"
     type = BuildTypeSettings.Type.DEPLOYMENT
     maxRunningBuilds = 1
