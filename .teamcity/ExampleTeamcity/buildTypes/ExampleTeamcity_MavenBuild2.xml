@@ -5,9 +5,8 @@
   <settings>
     <options>
       <option name="allowPersonalBuildTriggering" value="false" />
-      <option name="artifactRules" value="target/plaindoll.jar =&gt; artifacts" />
+      <option name="buildNumberPattern" value="%teamcity.build.branch%-%build.counter%" />
       <option name="maximumNumberOfBuilds" value="1" />
-      <option name="publishArtifactCondition" value="SUCCESSFUL" />
       <option name="showDependenciesChanges" value="true" />
     </options>
     <build-runners>
