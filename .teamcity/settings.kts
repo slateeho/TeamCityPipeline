@@ -44,7 +44,6 @@ object MavenBuild2 : BuildType({
 
     vcs {
         root(GitHub, "+:. => .")
-        root(DslContext.settingsRoot)
     }
 
     steps {
