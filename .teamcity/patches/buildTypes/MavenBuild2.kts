@@ -47,5 +47,14 @@ changeBuildType(RelativeId("MavenBuild2")) {
             isIncremental = true
             param("teamcity.kubernetes.executor.pull.policy", "")
         }
+        update<MavenBuildStep>(1) {
+            clearConditions()
+
+            conditions {
+                doesNotEqual("teamcity.build.branch", "master")
+            }
+            localRepoScope = MavenBuildStep.RepositoryScope.BUILD_CONFIGURATION
+            param("teamcity.kubernetes.executor.pull.policy", "")
+        }
     }
 }
