@@ -59,4 +59,12 @@ changeBuildType(RelativeId("MavenBuild2")) {
             param("teamcity.kubernetes.executor.pull.policy", "")
         }
     }
+
+    features {
+        remove {
+            feature {
+                type = "publish-artifacts"
+            }
+        }
+    }
 }
