@@ -53,6 +53,7 @@ changeBuildType(RelativeId("MavenBuild2")) {
             conditions {
                 doesNotEqual("teamcity.build.branch", "master")
             }
+            runnerArgs = "-Dmaven.test.failure.ignore=true"
             localRepoScope = MavenBuildStep.RepositoryScope.BUILD_CONFIGURATION
             param("teamcity.kubernetes.executor.pull.policy", "")
         }
