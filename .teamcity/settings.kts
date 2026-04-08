@@ -50,7 +50,7 @@ object MavenBuild2 : BuildType({
     steps {
         maven {
             name = "deploy"
-
+            pomLocation = "pom.xml"
             conditions {
                 equals("teamcity.build.branch", "master")
             }
@@ -59,7 +59,7 @@ object MavenBuild2 : BuildType({
         maven {
             name = "test"
             id = "text"
-
+            pomLocation = "pom.xml"
             conditions {
                 doesNotEqual("teamcity.build.branch", "master")
             }
