@@ -10,9 +10,6 @@
       <option name="publishArtifactCondition" value="SUCCESSFUL" />
       <option name="showDependenciesChanges" value="true" />
     </options>
-    <parameters>
-      <param name="env.a" value="%teamcity.build.branch%" />
-    </parameters>
     <output-parameters>
       <param name="env.a" value="%env.a%" />
     </output-parameters>
