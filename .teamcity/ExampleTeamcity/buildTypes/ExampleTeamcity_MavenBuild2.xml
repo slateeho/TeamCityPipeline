@@ -13,6 +13,9 @@
     <parameters>
       <param name="env.a" value="%teamcity.build.branch%" />
     </parameters>
+    <output-parameters>
+      <param name="env.a" value="%env.a%" />
+    </output-parameters>
     <build-runners>
       <runner id="RUNNER_1" name="deploy" type="Maven2">
         <conditions>
