@@ -37,7 +37,7 @@ project {
 object MavenBuild2 : BuildType({
     name = "Build"
 
-    artifactRules = "target/*.jar => artifacts"
+    artifactRules = "target/plaindoll.jar => artifacts"
     type = BuildTypeSettings.Type.DEPLOYMENT
     maxRunningBuilds = 1
     publishArtifacts = PublishMode.SUCCESSFUL
