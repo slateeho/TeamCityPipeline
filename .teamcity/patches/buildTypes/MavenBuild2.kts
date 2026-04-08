@@ -38,14 +38,6 @@ changeBuildType(RelativeId("MavenBuild2")) {
         }
     }
     steps {
-        update<MavenBuildStep>(0) {
-            clearConditions()
-
-            conditions {
-                equals("teamcity.build.branch", "refs/tags/master")
-            }
-            param("teamcity.kubernetes.executor.pull.policy", "")
-        }
         update<MavenBuildStep>(1) {
             clearConditions()
 
