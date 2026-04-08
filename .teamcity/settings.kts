@@ -53,6 +53,10 @@ object MavenBuild2 : BuildType({
     maxRunningBuilds = 1
     publishArtifacts = PublishMode.SUCCESSFUL
 
+    params {
+        param("branch", "teamcity.build.branch")
+    }
+
     vcs {
         root(GitHub, "+:. => .")
         root(DslContext.settingsRoot)
