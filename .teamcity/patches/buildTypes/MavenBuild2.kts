@@ -46,5 +46,13 @@ changeBuildType(RelativeId("MavenBuild2")) {
             }
             param("teamcity.kubernetes.executor.pull.policy", "")
         }
+        update<MavenBuildStep>(1) {
+            clearConditions()
+
+            conditions {
+                doesNotEqual("teamcity.build.branch", "refs/tags/master")
+            }
+            param("teamcity.kubernetes.executor.pull.policy", "")
+        }
     }
 }
