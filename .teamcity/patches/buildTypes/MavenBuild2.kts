@@ -42,7 +42,7 @@ changeBuildType(RelativeId("MavenBuild2")) {
             clearConditions()
 
             conditions {
-                equals("teamcity.build.branch", "master")
+                equals("teamcity.build.branch", "refs/tags/master")
             }
             goals = "clean package deploy"
             isIncremental = true
