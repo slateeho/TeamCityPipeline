@@ -51,17 +51,11 @@ object MavenBuild2 : BuildType({
             name = "deploy"
             pomLocation = "pom.xml"
             goals = "clean package deploy"
-            conditions {
-                equals("teamcity.build.branch", "refs/heads/master")
-            }
         }
         maven {
             name = "test"
             pomLocation = "pom.xml"
             goals = "clean test"
-            conditions {
-                notEquals("teamcity.build.branch", "refs/heads/master")
-            }
         }
     }
 
